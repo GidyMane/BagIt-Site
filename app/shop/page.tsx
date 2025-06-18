@@ -13,7 +13,7 @@ const mockProducts: Product[] = [
   {
     id: "1",
     name: "Blush Elegance Tote",
-    price: 89.99,
+    price: 899.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Tote",
     description: "A sophisticated tote bag perfect for everyday use",
@@ -22,7 +22,7 @@ const mockProducts: Product[] = [
   {
     id: "2",
     name: "Rose Gold Clutch",
-    price: 45.99,
+    price: 900.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Clutch",
     description: "Elegant clutch for special occasions",
@@ -31,7 +31,7 @@ const mockProducts: Product[] = [
   {
     id: "3",
     name: "Pink Paradise Crossbody",
-    price: 67.99,
+    price: 1000.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Crossbody",
     description: "Stylish crossbody bag for hands-free convenience",
@@ -40,7 +40,7 @@ const mockProducts: Product[] = [
   {
     id: "4",
     name: "Coral Dream Satchel",
-    price: 95.99,
+    price: 687.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Satchel",
     description: "Professional satchel with modern flair",
@@ -49,7 +49,7 @@ const mockProducts: Product[] = [
   {
     id: "5",
     name: "Dusty Rose Backpack",
-    price: 78.99,
+    price: 980.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Backpack",
     description: "Trendy backpack for the modern woman",
@@ -58,7 +58,7 @@ const mockProducts: Product[] = [
   {
     id: "6",
     name: "Blush Mini Bag",
-    price: 39.99,
+    price: 870.99,
     image: "/placeholder.svg?height=300&width=300",
     category: "Mini",
     description: "Cute mini bag for essentials only",
@@ -106,46 +106,47 @@ export default function Shop() {
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-2xl p-6 mb-8 card-shadow">
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <Input
-                type="text"
-                placeholder="Search bags..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 rounded-full border-gray-200 focus:border-blush-500"
-              />
-            </div>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="rounded-full border-gray-200 focus:border-blush-500">
-                <SelectValue placeholder="Category" />
-              </SelectTrigger>
-              <SelectContent>
-                {categories.map((category) => (
-                  <SelectItem key={category} value={category}>
-                    {category === "all" ? "All Categories" : category}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="rounded-full border-gray-200 focus:border-blush-500">
-                <SelectValue placeholder="Sort by" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="name">Name</SelectItem>
-                <SelectItem value="price-low">Price: Low to High</SelectItem>
-                <SelectItem value="price-high">Price: High to Low</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button className="bg-blush-500 hover:bg-blush-600 text-white rounded-full">
-              <Filter className="w-4 h-4 mr-2" />
-              Apply Filters
-            </Button>
-          </div>
-        </div>
+        <div className="bg-white rounded-2xl p-4 sm:p-6 mb-8 card-shadow">
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="relative">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+      <Input
+        type="text"
+        placeholder="Search bags..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full pl-10 rounded-full border border-gray-200 focus:border-blush-500 text-black placeholder:text-gray-400"
+      />
+    </div>
+    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+      <SelectTrigger className="w-full rounded-full border border-gray-200 focus:border-blush-500 text-black">
+        <SelectValue placeholder="Category" />
+      </SelectTrigger>
+      <SelectContent>
+        {categories.map((category) => (
+          <SelectItem key={category} value={category}>
+            {category === "all" ? "All Categories" : category}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+    <Select value={sortBy} onValueChange={setSortBy}>
+      <SelectTrigger className="w-full rounded-full border border-gray-200 focus:border-blush-500 text-black">
+        <SelectValue placeholder="Sort by" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="name">Name</SelectItem>
+        <SelectItem value="price-low">Price: Low to High</SelectItem>
+        <SelectItem value="price-high">Price: High to Low</SelectItem>
+      </SelectContent>
+    </Select>
+    <Button className="w-full bg-blush-500 hover:bg-blush-600 text-white rounded-full">
+      <Filter className="w-4 h-4 mr-2" />
+      Apply Filters
+    </Button>
+  </div>
+</div>
+
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
