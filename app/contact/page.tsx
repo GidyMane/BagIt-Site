@@ -97,9 +97,9 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
                     <p className="text-gray-600">
-                      123 Fashion Street
+                      online
                       <br />
-                      Style District, CA 90210
+                      24/7
                     </p>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Phone</h3>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">+254 113 817921</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -118,7 +118,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">hello@bagitlikeitsHot.com</p>
+                    <p className="text-gray-600">daphnydavour@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
