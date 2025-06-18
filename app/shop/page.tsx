@@ -106,7 +106,7 @@ export default function Shop() {
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 mb-8 card-shadow">
+        {/* <div className="bg-white rounded-2xl p-4 sm:p-6 mb-8 card-shadow">
   <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
     <div className="relative">
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -145,7 +145,59 @@ export default function Shop() {
       Apply Filters
     </Button>
   </div>
+</div> */}
+<div className="bg-white rounded-2xl p-4 sm:p-6 mb-8 card-shadow">
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    {/* Search Input */}
+    <div className="relative">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+      <Input
+        type="text"
+        placeholder="Search bags..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full pl-10 rounded-full border border-gray-200 focus:border-blush-500 text-black placeholder:text-gray-400"
+      />
+    </div>
+
+    {/* Category Select */}
+    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+      <SelectTrigger className="w-full rounded-full border border-gray-200 focus:border-blush-500 text-black">
+        <SelectValue placeholder="Category" />
+      </SelectTrigger>
+      <SelectContent className="bg-white text-gray-800">
+        {categories.map((category) => (
+          <SelectItem
+            key={category}
+            value={category}
+            className="text-gray-800 hover:bg-blush-50"
+          >
+            {category === "all" ? "All Categories" : category}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+
+    {/* Sort By Select */}
+    <Select value={sortBy} onValueChange={setSortBy}>
+      <SelectTrigger className="w-full rounded-full border border-gray-200 focus:border-blush-500 text-black">
+        <SelectValue placeholder="Sort by" />
+      </SelectTrigger>
+      <SelectContent className="bg-white text-gray-800">
+        <SelectItem value="name" className="text-gray-800 hover:bg-blush-50">Name</SelectItem>
+        <SelectItem value="price-low" className="text-gray-800 hover:bg-blush-50">Price: Low to High</SelectItem>
+        <SelectItem value="price-high" className="text-gray-800 hover:bg-blush-50">Price: High to Low</SelectItem>
+      </SelectContent>
+    </Select>
+
+    {/* Apply Filters Button */}
+    <Button className="w-full bg-blush-500 hover:bg-blush-600 text-white rounded-full">
+      <Filter className="w-4 h-4 mr-2" />
+      Apply Filters
+    </Button>
+  </div>
 </div>
+
 
 
         {/* Products Grid */}
@@ -170,7 +222,7 @@ export default function Shop() {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-3">{product.description}</p>
                 <p className="text-2xl font-bold text-blush-600 mb-4">ksh {product.price}</p>
                 <div className="flex gap-2">
