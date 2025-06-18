@@ -8,21 +8,21 @@ export default function Home() {
     {
       id: "1",
       name: "Blush Elegance Tote",
-      price: 89.99,
+      price: 1000.99,
       image: "/placeholder.svg?height=300&width=300",
       rating: 5,
     },
     {
       id: "2",
       name: "Rose Gold Clutch",
-      price: 45.99,
+      price: 840.99,
       image: "/placeholder.svg?height=300&width=300",
       rating: 4,
     },
     {
       id: "3",
       name: "Pink Paradise Crossbody",
-      price: 67.99,
+      price: 900.99,
       image: "/placeholder.svg?height=300&width=300",
       rating: 5,
     },
@@ -129,7 +129,7 @@ export default function Home() {
                     />
                   ))}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
                 <p className="text-2xl font-bold text-blush-600 mb-4">KsH{product.price}</p>
                 <Link href={`/shop/${product.id}`}>
                   <Button className="w-full bg-blush-500 hover:bg-blush-600 text-white rounded-full">
